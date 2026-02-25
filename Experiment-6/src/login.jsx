@@ -16,14 +16,14 @@ function Login() {
     }
 
     // 🔥 PASSWORD VALIDATION HERE
-    if (!validatePassword(password)) {
-      return;
-    }
+    // if (!validatePassword(password)) {
+    //   return;
+    // }
 
-    if (!agree) {
-      alert("Please accept the terms");
-      return;
-    }
+    // if (!agree) {
+    //   alert("Please accept the terms");
+    //   return;
+    // }
 
     alert("All good 🙂");
   }
@@ -39,32 +39,37 @@ function Login() {
     setPassErr(item.length < 3);
     setPassword(item);
   }
-function validatePassword(password) {
-  const errors = [];
+// function validatePassword(password) {
+//   const errors = [];
 
-  if (password.length < 8) {
-    errors.push("Your password must be at least 8 characters.");
-  }
-  if (!(/[a-z]/.test(password))) {
-    errors.push("Your password must contain at least one lowercase letter.");
-  }
-  if (!(/[A-Z]/.test(password))) {
-    errors.push("Your password must contain at least one uppercase letter.");
-  }
-  if (!(/[0-9]/.test(password))) {
-    errors.push("Your password must contain at least one digit.");
-  }
-  if (!(/[@$!%*?&]/.test(password))) {
-    errors.push("Your password must contain at least one special character.");
-  }
+//   if (password.length < 8) {
+//     errors.push("Your password must be at least 8 characters.");
+//   }
+//   if (!(/[a-z]/.test(password))) {
+//     errors.push("Your password must contain at least one lowercase letter.");
+//   }
+//   if (!(/[A-Z]/.test(password))) {
+//     errors.push("Your password must contain at least one uppercase letter.");
+//   }
+//   if (!(/[0-9]/.test(password))) {
+//     errors.push("Your password must contain at least one digit.");
+//   }
+//   if (!(/[@$!%*?&]/.test(password))) {
+//     errors.push("Your password must contain at least one special character.");
+//   }
 
-  if (errors.length > 0) {
-    alert(errors.join("\n"));
-    return false;
-  }
+//   if (errors.length > 0) {
+//     alert(errors.join("\n"));
+//     return false;
+//   }
 
-  return true;
+//   return true;
+// }
+function isValidPassword(pwd) {
+  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  return regex.test(pwd);
 }
+
 
   return (
     <div>

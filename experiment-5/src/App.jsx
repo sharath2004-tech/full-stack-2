@@ -1,6 +1,6 @@
 import { lazy, Suspense, useState } from 'react';
 
-const User = lazy(() => import('./User'));
+const User = lazy(() => import('./user'));
 const Image = lazy(() => import('./Image'));
 const Text = lazy(() => import('./Text'));
 
